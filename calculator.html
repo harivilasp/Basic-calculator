@@ -1,0 +1,144 @@
+<html>
+<head>
+<title>Calculator</title>
+<script>
+	var a=0,d,aa,bb;
+	var b=0,c,x=0,m;
+	function assign(s){
+	if(x==0)
+	{
+		aa=parseInt(s.value);
+		a=a*10+aa;
+		document.getElementById("result").innerHTML=a;
+	}
+	else if(x==1)
+	{
+		if(b==0)
+		m=document.getElementById("result").innerHTML;
+		bb=parseInt(s.value);
+		b=b*10+bb;
+		document.getElementById("result").innerHTML=m+b;
+	}
+	}
+	function reset_btn(s)
+	{
+		a=0;b=0;x=0;
+		document.getElementById("result").innerHTML=a;
+	}
+	function add(s)
+	{
+		d=10;
+		if(x==0)
+		x=1;
+		else
+		x=0;
+		document.getElementById("result").innerHTML+=" + ";
+	}
+	function equal(s)
+	{
+		if(d==10)
+		c=a+b;
+		else if(d==11)
+		c=a-b;
+		else if(d==12)
+		c=a+b;
+		else if(d==13)
+		c=a/b;
+		document.getElementById("result").innerHTML=c;
+		if(x==0)
+		x=1;
+		else
+		x=0;
+		a=0;b=0;x=0;
+	}
+	function subtract(s)
+	{
+		d=11;
+		if(x==0)
+		x=1;
+		else
+		x=0;
+		document.getElementById("result").innerHTML+=" - ";
+	}
+	function multiply(s)
+	{
+		d=12;
+		if(x==0)
+		x=1;
+		else
+		x=0;
+		document.getElementById("result").innerHTML+=" x ";
+	}
+	function divide(s)
+	{
+		d=13;
+		if(x==0)
+		x=1;
+		else
+		x=0;
+		document.getElementById("result").innerHTML+=" / ";
+	}
+</script>
+<style>
+	#wrapper{
+		margin: auto 520px;
+		width:290px;
+		height:450px;
+		border-radius:12px;
+		background-color:#3F9;
+		box-shadow:0px 0px 12px 3px #000;	
+		border:3px solid #00F;
+		}
+	#display{
+		margin:4px;
+		background-color:#6F3;
+		border:3px solid #600;
+		width:275px;
+		height:50px;
+		}
+	#result{
+		float:right;
+		margin-right:6px;}
+	.b{
+		width:58px;
+		background-color:#CC6;
+		font-size:30px;
+		margin:7px;
+		height:58px;
+		float:left;}
+</style>
+</head>
+	
+<body style="background-color:#999";>
+<div id="main" style="margin-top:99px;">
+<div id="wrapper">
+	<h1 id="title" style="text-align:center"> Basic Calculator </h1>
+	<div id="display">
+    <h2 id="result">0</h2>
+    </div>
+    <div id="container">
+    
+    <h1 style="margin-top:-9px;"></h1>
+    <button id="b1" class="b" onClick="assign(this)" value="1">1</button>
+    <button id="b2" class="b" onClick="assign(this)" value="2">2</button>
+    <button id="b3" class="b" onClick="assign(this)" value="3">3</button>
+    <button id="b4" class="b" onClick="assign(this)" value="4">4</button>
+    <button id="b5" class="b" onClick="assign(this)" value="5">5</button>
+    <button id="b6" class="b" onClick="assign(this)" value="6">6</button>
+    <button id="b7" class="b" onClick="assign(this)" value="7">7</button>
+    <button id="b8" class="b" onClick="assign(this)" value="8">8</button>
+    <button id="b9" class="b" onClick="assign(this)" value="9">9</button>
+    <button id="b0" class="b" onClick="assign(this)" value="0">0</button>
+    <button id="b_add" class="b" onClick="add(this)">+</button>
+    <button id="b_sub" class="b" onClick="subtract(this)">-</button>
+    <button id="b_mul" class="b" onClick="multiply(this)">*</button>
+    <button id="b_div" class="b" onClick="divide(this)">/</button>
+    <button id="b_clear" class="b" onClick="reset_btn(this)">C</button>
+    <button id="b_equal" class="b" onClick="equal(this)">=</button>
+    
+    </div>
+</div>
+<h4 style="text-align:center;margin-bottom:0px; ">View Source Code on <a href="#">Github</a></h4>
+</div>
+</body>
+</html>
